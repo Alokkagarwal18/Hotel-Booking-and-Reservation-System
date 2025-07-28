@@ -1,6 +1,6 @@
 import React from 'react'
 import "./home.css"
-import Navbar from '../../component/navbar/navbar'
+import Navbar from '../../component/navbar/Navbar'
 import Header from '../../component/header/Header'
 import Featured from '../../component/featured/Featured'
 import PropertyList from '../../component/propertyList/PropertyList'
