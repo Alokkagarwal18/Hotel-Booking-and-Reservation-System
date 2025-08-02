@@ -1,4 +1,4 @@
-.searchItem{
+/* .searchItem{
   border: 1px solid lightgray;
   padding: 10px;
   border-radius: 5px;
@@ -110,6 +110,130 @@
   cursor: pointer;
   border-radius: 5px;
 }
+*/
+
+/* chatgpt */
+
+.searchItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white; /* ✅ removed blue */
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  align-items: flex-start; /* aligns content neatly */
+}
+
+.siImg {
+  width: 200px;
+  height: 180px; /* ✅ match to reduce card height */
+  object-fit: cover;
+ 
+}
+
+.searchItem {
+  max-height: 180px;
+  overflow: hidden;
+}
+
+
+.siDesc {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.siTitle {
+  font-size: 20px;
+  color: #003580;
+  font-weight: bold;
+}
+
+.siDistance,
+.siSubtitle,
+.siFeatures,
+.siCancelOp,
+.siCancelOpSubtitle {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.2;
+}
+
+.siTaxiOp {
+  font-size: 14px;
+  color: green;
+  font-weight: bold;
+}
+
+.siCancelOp {
+  color: green;
+  font-weight: 600;
+}
+
+.siDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.siRating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.siRating > span {
+  font-weight: 500;
+}
+
+.siRating > button {
+  background-color: #003580;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.siDetailTexts {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.siPrice {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.siTaxOp {
+  font-size: 12px;
+  color: gray;
+}
+
+.siCheckButton {
+  background-color: #0071c2;
+  color: white;
+  font-weight: bold;
+  padding: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.siCheckButton:hover {
+  background-color: #005fa3;
+}
+
+
+
 
 
 

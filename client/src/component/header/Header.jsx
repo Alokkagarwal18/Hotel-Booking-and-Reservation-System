@@ -67,7 +67,7 @@ const Header = ({type}) => {
 
           <div className="headerListItem">
           <FontAwesomeIcon icon={faCar}/>
-          <span>Car rentals</span>
+          <span><a className='car' href="https://car-rental-eta-liard.vercel.app/">Car rentals</a></span>
           </div>
 
           <div className="headerListItem">

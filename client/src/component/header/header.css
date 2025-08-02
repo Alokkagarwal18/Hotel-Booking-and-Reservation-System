@@ -28,6 +28,11 @@
   gap: 10px;
 }
 
+.car{
+  text-decoration: none; /* removes underline */
+  color: inherit;  
+}
+
 .headerBtn{
   background-color: #0071c2;
   color: white;

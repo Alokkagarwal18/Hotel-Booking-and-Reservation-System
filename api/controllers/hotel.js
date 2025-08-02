@@ -73,15 +73,50 @@ export const getHotel = async (req, res, next)=>{
 //   }
 // };
 
-export const getHotels = async (req, res, next) => {
-  const { min, max, limit, featured, ...others } = req.query;
 
-  // Convert featured from string to boolean if it exists
-  const filter = {
-    ...others,
-    ...(featured !== undefined && { featured: featured === "true" }),
-    cheapestPrice: { $gt: min || 1, $lt: max || 999999 },
-  };
+
+// //my working code
+// export const getHotels = async (req, res, next) => {
+//   const { min, max, limit, featured, ...others } = req.query;
+
+//   // Convert featured from string to boolean if it exists
+//   const filter = {
+//     ...others,
+//     ...(featured !== undefined && { featured: featured === "true" }),
+//     cheapestPrice: { $gt: min || 1, $lt: max || 999999 },
+//   };
+
+//   try {
+//     const hotels = await Hotel.find(filter).limit(Number(limit) || 0);
+//     res.status(200).json(hotels);
+//   } catch (err) {
+//     next(err);
+//   }
+// };
+
+export const getHotels = async (req, res, next) => {
+  const { min, max, limit, featured, type, city } = req.query;
+
+  let filter = {};
+
+  if (featured !== undefined) {
+    filter.featured = featured === "true";
+  }
+
+  if (type) {
+    filter.type = new RegExp(type, "i"); // Case-insensitive match
+  }
+
+  if (city) {
+    filter.city = new RegExp(city, "i"); // Optional: filter by city
+  }
+
+  if (min || max) {
+    filter.cheapestPrice = {
+      ...(min && { $gt: min }),
+      ...(max && { $lt: max }),
+    };
+  }
 
   try {
     const hotels = await Hotel.find(filter).limit(Number(limit) || 0);

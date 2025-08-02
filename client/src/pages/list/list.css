@@ -1,26 +1,34 @@
-.listContainer{
+.listContainer {
   display: flex;
   justify-content: center;
   margin-top: 20px;
-
+  /* ✨ Ensure sticky works */
+  overflow: visible;
 }
 
-.listWrapper{
+.listWrapper {
   width: 100%;
   max-width: 1024px;
   display: flex;
   gap: 20px;
+
+  /* ✨ Important: sticky will break if this is set */
+  overflow: visible;
 }
 
-.listSearch{
+.listSearch {
   flex: 1;
-  background-color: #febb02;
+  background-color: white;
   padding: 10px;
   border-radius: 10px;
   position: sticky;
-  top: 10px;
-  height: max-content;
+  top: 20px;              /* Adjust as per navbar */
+  height: fit-content;
+  z-index: 10;            /* Ensure it's above if overlaps */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+
 .listTitle{
   font-size: 20px;
   color: #555;
